@@ -13,7 +13,7 @@ require_once("config.php");
 
 $db_connection = mysql_connect(DB_HOST, DB_USER, DB_PASS) or die("Cannot connect to database. Check your configuration.  MySQL says: " . mysql_error() . "\n");
 
-mysql_select_db(DB_DBNAME, $db_connection) or die("Cannot select database. Check your configuration.  MySQL says: " .  mysql_error());
+mysql_select_db(DB_DBNAME, $db_connection) or die("Cannot select database. Check your configuration.  MySQL says: " .  mysql_error() . "\n");
 
 $DB_TABLE = DB_TABLE;
 
@@ -28,7 +28,7 @@ function do_query($sql, $live=0) {
 	}
 	else {
 		$result = mysql_query($sql, $db_connection);
-		if(mysql_errno()) die("Cannot query database. MySQL says: ". mysql_error() . "");
+		if(mysql_errno()) die("Cannot query database. MySQL says: ". mysql_error() . "\n");
 		return $result;
 	}
 }
