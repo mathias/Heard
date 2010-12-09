@@ -11,7 +11,7 @@
 
 require_once("config.php");
 
-$db_connection = mysql_connect(DB_HOST, DB_USER, DB_PASS) or die("Cannot connect to database. Check your configuration.  MySQL says: " . mysql_error());
+$db_connection = mysql_connect(DB_HOST, DB_USER, DB_PASS) or die("Cannot connect to database. Check your configuration.  MySQL says: " . mysql_error() . "\n");
 
 mysql_select_db(DB_DBNAME, $db_connection) or die("Cannot select database. Check your configuration.  MySQL says: " .  mysql_error());
 
